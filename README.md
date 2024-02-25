@@ -3,6 +3,7 @@ List of useful OpenFOAM function objects
 
 1. `Probes` function object : to monitor pressure and velocity at critical points across the domain.
 
+```bash
 probes
 {
     type            probes;
@@ -32,9 +33,11 @@ probeLocations
     //           is to include them (with value -VGREAT)
     includeOutOfBounds  true;
 }
+```
 
 2. `fieldAverage` function object : to calculate the time-averaged pressure and velocity fields, as well as their root-mean-squared covarience.
 
+```bash
 fieldAverage
     {
         type            fieldAverage;
@@ -59,9 +62,11 @@ fieldAverage
             }
         );
     }
+```
 
 3. `forces` or `forceCoeffs` function object : to calculate the force and force coefficient on any projected surface.
 
+```bash
 forces1
     {
         type            forces;
@@ -99,9 +104,11 @@ forceCoefficients
         lRef            0.1;
         Aref            0.0628;
     }
+```
 
 4. `vorticity` function object : to calculate the curl of velocity.
 
+```bash
 vorticity
     {
         // Mandatory entries
@@ -119,9 +126,11 @@ vorticity
         writeControl    timeStep;
         writeInterval   42;
     }
+```
 
 5. `Lambda2` function object : used to identify vortex cores.
 
+```bash
 Lambda2
 {
     // Mandatory entries
@@ -139,9 +148,11 @@ Lambda2
     writeControl    timeStep;
     writeInterval   42;
 }
+```
 
 6. `subtract` function object : to calculate the turbulence intensity, i.e. the fluctuating component of velocity.
 
+```bash
 subtract
 {
     // Mandatory entries
@@ -159,9 +170,11 @@ subtract
     writeControl    timeStep;
     writeInterval   42;
 }
+```
 
 7. `surfaces` function object : extract field data at specified planes.
 
+```bash
 surfaces
 {
     type            surfaces;
@@ -202,3 +215,4 @@ surfaces
         }
     };
 }
+```
